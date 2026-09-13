@@ -1,0 +1,25 @@
+# 1. Create the script at root level
+cat > extract.sh << 'EOF'
+#!/bin/bash
+
+# Extract the ZIP file
+unzip -o "enterprise-social-network (/IMChat-full-stack-social-network.zip" -d "."
+
+# Rename the extracted folder if needed (optional)
+# mv "enterprise-social-network (/" "source" 
+
+echo "✅ Extraction complete!"
+echo "📦 Install dependencies: pnpm install"
+echo "🚀 Start development: pnpm dev"
+EOF
+
+# 2. Make it executable
+chmod +x extract.sh
+
+# 3. Run it
+./extract.sh
+
+# 4. Commit to git
+git add extract.sh
+git commit -m "Add ZIP extraction script"
+git push origin main
